@@ -52,3 +52,26 @@ document.addEventListener("DOMContentLoaded", () => {
         renderCart();
     });
 });
+
+
+
+//CART//
+
+function revelarCarrito(){
+    const cartWrap = document.getElementById("cart-wrap");
+    cartWrap.classList.remove("animate__slideOutUp");
+    cartWrap.classList.add("animate__animated", "animate__slideInDown");
+    document.getElementById("fondo-oscuro").style.display = "block";
+    cartWrap.style.display = "block";
+}
+function cerrarCarrito(){
+    const exit = document.getElementById("cart-wrap");
+    exit.classList.add("animate__animated", "animate__slideOutUp");
+    
+    setTimeout(() => {
+        document.getElementById("fondo-oscuro").style.display = "none";
+        exit.style.display = "none";
+        exit.classList.remove("animate__animated", "animate__slideOutUp", "animate__slideInDown");
+    }, 1000);
+}
+
